@@ -1,0 +1,85 @@
+.hero-events {
+  position: relative;
+  height: auto;
+  overflow: hidden;
+}
+body {
+  overflow-x: hidden;
+}
+.nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+.events-filters {
+  position: relative;
+  display: flex;
+  left: 0;
+  width: 100%;
+  padding: 10px;
+  padding-top: 15px;
+  border-bottom: 1px solid #ccc;
+}
+
+.org-filter {
+  width: 20%;
+}
+
+.type-filter {
+  width: 20%;
+}
+
+.org-select {
+  width: 100%;
+  border-radius: 25px;
+}
+
+.type-select {
+  width: 100%;
+  border-radius: 25px;
+}
+
+.events-section {
+  margin: 20px;
+}
+
+.section-title {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.events-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+/* .event-card-top {
+  width: 400px;
+  margin: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+} */
+
+.event-card-top .MuiTypography-root {
+  margin-bottom: 10px;
+}
+
+/* @media (max-width: 768px) {
+  .event-card {
+    width: calc(50% - 10px);
+  }
+} */

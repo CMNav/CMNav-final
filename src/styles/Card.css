@@ -1,0 +1,44 @@
+.event-card-top {
+  width: 400px;
+  margin: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+.card-img-wrapper img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.event-card-title-top {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.event-card-desc-top {
+  margin: 0.5rem;
+  color: #333;
+  font-size: 0.9rem;
+}
+
+.event-card-actions-top {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  background: #f4f4f4;
+}
+
+.event-card-actions-top button {
+  border: none;
+  background: #333;
+  color: #fff;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.event-card-info-top {
+  padding: 15px;
+}
