@@ -8,7 +8,7 @@ import PlanYourVisit from "./pages/PlanYourVisit";
 
 function App() {
   return (
-    <Router basename="/index.html">
+    <HashRouter basename="/index.html">
       <div className="App">
         <Routes>
           <Route path="/*" element={<Home />} />
@@ -18,7 +18,7 @@ function App() {
           <Route path="/plan-your-vist" element={<PlanYourVisit />} />
         </Routes>
       </div>
-    </Router>
+    </HashRouter>
   );
 }
 
