@@ -84,7 +84,18 @@ function ResponsiveAppBar() {
               </Button>
             );
           })}
-          <Button onClick={changeLanguage}>
+
+          <Button
+            onClick={changeLanguage}
+            sx={{
+              color: "white",
+              my: 2,
+              display: "block",
+              "&:hover": {
+                backgroundColor: "#FFD700",
+              },
+            }}
+          >
             {i18n.language.toUpperCase()}
           </Button>
         </Box>

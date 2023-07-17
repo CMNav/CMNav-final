@@ -7,10 +7,6 @@ import {
   StepButton,
   Button,
   Typography,
-  FormControl,
-  Radio,
-  RadioGroup,
-  FormControlLabel,
 } from "@mui/material";
 
 import "../styles/PlanYourVisit.css";
