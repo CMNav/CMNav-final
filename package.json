@@ -32,8 +32,6 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "postbuild": "npm run postbuild:copy",
-    "postbuild:copy": "copy build\\index.html build\\404.html",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
