@@ -8,9 +8,9 @@ import PlanYourVisit from "./pages/PlanYourVisit";
 
 function App() {
   return (
-    <Router>
+    <Router basename="/index.html">
       <div className="App">
-        <Routes basename="/index.html">
+        <Routes>
           <Route path="/*" element={<Home />} />
           <Route path="/events" element={<Events />} />
           <Route path="/contact" element={<Contact />} />
