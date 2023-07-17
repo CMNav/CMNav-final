@@ -8,7 +8,7 @@ import PlanYourVisit from "./pages/PlanYourVisit";
 
 function App() {
   return (
-    <HashRouter basename="/index.html">
+    <HashRouter>
       <div className="App">
         <Routes>
           <Route path="/*" element={<Home />} />
