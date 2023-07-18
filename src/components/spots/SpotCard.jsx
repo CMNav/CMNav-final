@@ -1,5 +1,7 @@
 import React from "react";
-import { CardActions, Button } from "@mui/material";
+import { CardActions, Button, Typography } from "@mui/material";
+import Rating from "@mui/material/Rating";
+import Box from "@mui/material/Box";
 
 const SpotCard = ({
   id,
@@ -8,14 +10,15 @@ const SpotCard = ({
   type,
   smallDescription,
   description,
+  rating,
   lat,
   lng,
   onClick,
-  onAddToList, // Updated prop name
+  onAddToList,
   handleOpenSnackbar,
 }) => {
   const handleAddToList = (event) => {
-    event.stopPropagation(); // prevent card onClick from firing
+    event.stopPropagation();
     const spot = {
       id,
       name,
@@ -23,11 +26,12 @@ const SpotCard = ({
       type,
       smallDescription,
       description,
+      rating,
       lat,
       lng,
     };
 
-    onAddToList(spot); // Call the onAddToList function from the prop
+    onAddToList(spot);
     handleOpenSnackbar();
   };
 
@@ -36,7 +40,7 @@ const SpotCard = ({
       className="spot-card"
       data-category={type}
       data-subcategory={type === "Restaurants" ? "Restaurants" : "Spots"}
-      onClick={onClick} // added onClick handler
+      onClick={onClick}
     >
       <div className="spot-card-img">
         <img src={image} alt={name} />
@@ -44,6 +48,14 @@ const SpotCard = ({
       <div className="spot-card-info">
         <h2 className="spot-card-title">{name}</h2>
         <p className="spot-card-desc">{description}</p>
+        <div className="spot-card-rating">
+          <Typography variant="body2" color="textSecondary" component="span">
+            Rating:
+          </Typography>
+          <Box component="span" sx={{ marginLeft: "4px" }}>
+            <Rating value={rating} precision={0.5} readOnly />
+          </Box>
+        </div>
       </div>
       <CardActions className="spot-card-actions">
         <Button onClick={handleAddToList}>Add to List</Button>

@@ -1,25 +1,17 @@
 import React, { useState, useEffect } from "react";
 import { Checkbox, FormControlLabel } from "@mui/material";
-import {
-  Card,
-  CardContent,
-  CardActions,
-  Button,
-  Typography,
-  Snackbar,
-  Alert,
-} from "@mui/material";
+import { Snackbar, Alert } from "@mui/material";
 import Pagination from "@mui/material/Pagination";
 import Navbar from "../components/navbar";
 import Hero from "../components/Hero";
+import Rating from "@mui/material/Rating";
+import Box from "@mui/material/Box";
 import "../styles/Spots.css";
 import {
   sites_historical,
   sites_museums,
   sites_parks,
-  sites_religious,
   Restaurants_Asian,
-  Restaurants_Brunch,
   Restaurants_FastFood,
   Restaurants_Italian,
   Restaurants_Seafood,
@@ -67,7 +59,6 @@ const SpotDetailsModal = ({
   onAddToList,
   handleOpenSnackbar,
 }) => {
-  // Added onAddToList props
   if (!open) return null;
 
   const handleAddToList = () => {
@@ -82,6 +73,19 @@ const SpotDetailsModal = ({
         <p className="spot-location">{spot.location}</p>
         <p className="spot-description">{spot.description}</p>
         <p className="spot-category">{spot.category}</p>
+        <h3>Reviews</h3>
+        {spot.ratings.map((review, index) => (
+          <div key={index} className="review-container">
+            <h4>{review.user}</h4>
+            <p>{review.comment}</p>
+            <Rating
+              name={`review-rating-${index}`}
+              value={review.rating}
+              readOnly
+            />
+          </div>
+        ))}
+
         <div className="modal-buttons">
           <button className="add-button" onClick={handleAddToList}>
             Add to List
@@ -94,7 +98,6 @@ const SpotDetailsModal = ({
     </div>
   );
 };
-
 const Spots = () => {
   const [selectedCategories, setSelectedCategories] = useState([]);
   const [selectedSubcategories, setSelectedSubcategories] = useState([]);
@@ -315,6 +318,7 @@ const Spots = () => {
                 description={spot.description}
                 lat={spot.lat}
                 lng={spot.lng}
+                rating={spot.rating}
                 onClick={() => handleCardClick(spot)}
                 onAddToList={handleAddToList} // pass the handleAddToList function as a prop
                 handleOpenSnackbar={handleOpenSnackbar}
