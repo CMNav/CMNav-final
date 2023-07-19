@@ -40,7 +40,6 @@ function ResponsiveAppBar() {
             marginLeft: "20px",
           }}
         >
-          <AdbIcon sx={{ mr: 4 }} />
           <Typography
             variant="h6"
             noWrap
