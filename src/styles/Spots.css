@@ -138,16 +138,26 @@
   border: none;
   background: #333;
   color: #fff;
-  padding: 10px 20px;
+  padding: 15px 25px;
   cursor: pointer;
+  border-radius: 5px;
+}
+
+.add-button:hover {
+  background: #f4f4ff;
 }
 
 .close-button {
   border: none;
   background: #ccc;
   color: #333;
-  padding: 10px 20px;
+  padding: 15px 25px;
   cursor: pointer;
+  border-radius: 5px;
+}
+
+.close-button:hover {
+  background: #f4f4ff;
 }
 
 .review-container {

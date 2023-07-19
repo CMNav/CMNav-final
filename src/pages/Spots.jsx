@@ -87,11 +87,11 @@ const SpotDetailsModal = ({
         ))}
 
         <div className="modal-buttons">
-          <button className="add-button" onClick={handleAddToList}>
-            Add to List
-          </button>
           <button className="close-button" onClick={onClose}>
             Close
+          </button>
+          <button className="add-button" onClick={handleAddToList}>
+            Add to List
           </button>
         </div>
       </div>

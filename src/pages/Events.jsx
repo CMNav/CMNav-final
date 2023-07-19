@@ -191,27 +191,40 @@ const Events = () => {
       </div>
 
       {/* Event Details Dialog */}
+
       <Dialog open={open} onClose={handleCloseDialog}>
         <DialogTitle>{selectedEvent && selectedEvent.name}</DialogTitle>
         <DialogContent>
           <DialogContentText>
             {selectedEvent && t(selectedEvent.description)}{" "}
-            {/* Translate the event description */}
           </DialogContentText>
         </DialogContent>
-        <DialogActions>
-          <Button onClick={handleCloseDialog}>{t("Close")}</Button>
+        <DialogActions
+          sx={{ display: "flex", justifyContent: "space-between" }}
+        >
+          <Button
+            onClick={handleCloseDialog}
+            sx={{
+              border: "none",
+              background: "#ccc",
+              color: "#333",
+              padding: " 10px 20px",
+              cursor: "pointer",
+            }}
+          >
+            {t("Close")}
+          </Button>
           <Button
             onClick={handleAddEvent}
             sx={{
-              backgroundColor: "#FFD700",
-              color: "#000000",
-              "&:hover": {
-                backgroundColor: "#FFF900",
-              },
+              border: "none",
+              background: "#333",
+              color: "#fff",
+              padding: " 10px 20px",
+              cursor: "pointer",
             }}
           >
-            {t("Add to List")} {/* Translate the button label */}
+            {t("Add to List")}
           </Button>
         </DialogActions>
       </Dialog>
