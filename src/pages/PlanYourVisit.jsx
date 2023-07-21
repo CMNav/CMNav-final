@@ -192,26 +192,68 @@ const PlanYourVisit = () => {
   const renderStepContent = (step) => {
     switch (step) {
       case 0:
-        return (
-          <ItemStep
-            items={selectedSpots}
-            onRemove={(id) => handleRemove("spots", id)}
-          />
-        );
+        if (selectedSpots.length === 0) {
+          return (
+            <div>
+              <Typography variant="h5" gutterBottom>
+                No spots selected
+              </Typography>
+              <Typography variant="body1" gutterBottom>
+                Please select some spots to visit before proceeding. Click on
+                Add More to add spots.
+              </Typography>
+            </div>
+          );
+        } else {
+          return (
+            <ItemStep
+              items={selectedSpots}
+              onRemove={(id) => handleRemove("spots", id)}
+            />
+          );
+        }
       case 1:
-        return (
-          <ItemStep
-            items={selectedEvents}
-            onRemove={(id) => handleRemove("events", id)}
-          />
-        );
+        if (selectedSpots.length === 0) {
+          return (
+            <div>
+              <Typography variant="h5" gutterBottom>
+                No events selected
+              </Typography>
+              <Typography variant="body1" gutterBottom>
+                Please select some events to attend before proceeding. Click on
+                Add More to add events.
+              </Typography>
+            </div>
+          );
+        } else {
+          return (
+            <ItemStep
+              items={selectedEvents}
+              onRemove={(id) => handleRemove("events", id)}
+            />
+          );
+        }
       case 2:
-        return (
-          <ItemStep
-            items={selectedRestaurants}
-            onRemove={(id) => handleRemove("restaurants", id)}
-          />
-        );
+        if (selectedSpots.length === 0) {
+          return (
+            <div>
+              <Typography variant="h5" gutterBottom>
+                No restaurants selected
+              </Typography>
+              <Typography variant="body1" gutterBottom>
+                Please select some restaurants to visit before proceeding. Click
+                on Add More to add restaurants.
+              </Typography>
+            </div>
+          );
+        } else {
+          return (
+            <ItemStep
+              items={selectedRestaurants}
+              onRemove={(id) => handleRemove("restaurants", id)}
+            />
+          );
+        }
       case 3:
         return (
           <TransportationStep
